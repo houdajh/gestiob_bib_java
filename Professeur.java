@@ -3,36 +3,24 @@ package gestion;
 
 import com.company.Livre;
 
-public class Professeur extends Livre {
-    final int code;
-    private Livre liv;
-    private int  nb_liv;
-    public Professeur(int ISBN, String titre, String[] auteurs, String editeur, int ann_edition, int nb_exp, int nombre, String type, String tome, int code, Livre liv) {
-        super(ISBN, titre, auteurs, editeur, ann_edition, nb_exp, nombre, type, tome);
-        this.code = code;
-        this.liv = liv;
+public class Professeur extends Personne {
+
+    private int  nb_liv_prof;
+
+    public Professeur(int code, Livre liv, int nb_liv_prof) {
+        super(code, liv);
+        this.nb_liv_prof = nb_liv_prof;
     }
 
-    public int getCode() {
-        return code;
-    }
-
-    public Livre getLiv() {
-        return liv;
-    }
-
-    public void setLiv(Livre liv) {
-        this.liv = liv;
-    }
-
-    public int getNb_liv() {
-        if(nb_liv<=5 && nb_liv>=0) {
-            return nb_liv;
+    public int getNb_liv_prof() {
+        if(nb_liv_prof<=5 && nb_liv_prof>=0) {
+            return nb_liv_prof;
         }
         return -1;
     }
 
-    public void setNb_liv(int nb_liv) {
-        this.nb_liv = nb_liv;
+    public void setNb_liv_prof(int nb_liv_prof) {
+        this.nb_liv_prof = nb_liv_prof;
     }
+
 }

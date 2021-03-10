@@ -3,13 +3,17 @@ package gestion;
 
 import com.company.Livre;
 
-public class Personne extends Livre {
+public class Personne  {
     final int code;
     private Livre liv;
     private int nb_liv;
 
-    public Personne(int ISBN, String titre, String[] auteurs, String editeur, int ann_edition, int nb_exp, int nombre, String type, String tome, int code, Livre liv, int nb_liv) {
-        super(ISBN, titre, auteurs, editeur, ann_edition, nb_exp, nombre, type, tome);
+    public Personne(int code, Livre liv) {
+        this.code = code;
+        this.liv = liv;
+    }
+
+    public Personne(int code, Livre liv, int nb_liv) {
         this.code = code;
         this.liv = liv;
         this.nb_liv = nb_liv;
@@ -34,17 +38,7 @@ public class Personne extends Livre {
         return -1;
     }
 
-
     public void setNb_liv(int nb_liv) {
         this.nb_liv = nb_liv;
-    }
-
-    @Override
-    public String toString() {
-        return "Personne{" +
-                "code=" + code +
-                ", liv=" + liv +
-                ", nb_liv=" + nb_liv +
-                "} " + super.toString();
     }
 }

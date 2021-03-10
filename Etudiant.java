@@ -3,39 +3,37 @@ package gestion;
 
 import com.company.Livre;
 
-public class Etudiant extends Livre {
-    final int code;
-    private Livre liv;
-    private int nb_liv;
+public class Etudiant extends Personne {
+    private int nb_liv_Etud;
 
-    public Etudiant(int ISBN, String titre, String[] auteurs, String editeur, int ann_edition, int nb_exp, int nombre, String type, String tome, int code, Livre liv, int nb_liv) {
-        super(ISBN, titre, auteurs, editeur, ann_edition, nb_exp, nombre, type, tome);
-        this.code = code;
-        this.liv = liv;
-        this.nb_liv = nb_liv;
+    public Etudiant(int code, Livre liv, int nb_liv_Etud) {
+        super(code, liv);
+        this.nb_liv_Etud = nb_liv_Etud;
     }
 
+    @Override
     public int getCode() {
-        return code;
+        return super.getCode();
     }
 
+    @Override
     public Livre getLiv() {
-        return liv;
+        return super.getLiv();
     }
 
+    @Override
     public void setLiv(Livre liv) {
-        this.liv = liv;
+        super.setLiv(liv);
     }
 
-    public int getNb_liv() {
-        if(nb_liv<=3 && nb_liv>=0) {
-            return nb_liv;
+    public int getNb_liv_Etud() {
+        if(nb_liv_Etud<=3 && nb_liv_Etud>=0) {
+            return nb_liv_Etud;
         }
         return -1;
     }
 
-
-    public void setNb_liv(int nb_liv) {
-        this.nb_liv = nb_liv;
+    public void setNb_liv_Etud(int nb_liv_Etud) {
+        this.nb_liv_Etud = nb_liv_Etud;
     }
 }
